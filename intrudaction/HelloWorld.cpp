@@ -1,6 +1,13 @@
 #include <iostream>
 
-int main(){
-    std::cout << "Hello World!";
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+    /*
+     * The above line is equivalent to:
+     * std::cout << "Hello World!" << std::endl;
+     *
+     */
     return 0;
 }
