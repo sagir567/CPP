@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 
 
     cout << "int size in Bytes: " << sizeof(int) << endl;

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
     cout << "int values:\n" << endl;
     cout << "int min value: " <<
          numeric_limits<int>::min() << endl;
