@@ -29,6 +29,10 @@ namespace ariel {
 
         }
 
+        ~Game() {
+
+        }
+
         void playTurn();
 
         void playAll();
@@ -40,7 +44,10 @@ namespace ariel {
         void printLog();
 
         void printStats();
+
+        virtual ~Game();
     };
+
 }
 
 #endif //UNTITLED_GAME_H

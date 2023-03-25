@@ -22,6 +22,9 @@ namespace ariel {
             this->suit = suit;
         }
 
+        ~Card() {
+
+        }
 
 
         int getValue();

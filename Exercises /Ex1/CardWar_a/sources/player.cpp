@@ -43,7 +43,12 @@ int Player::getWins() const {
 int Player::getLoses() const {
     return loses;
 }
+    Player::~Player() {
 
 }
+
+}
+
+
 
 

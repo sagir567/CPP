@@ -59,6 +59,8 @@ namespace ariel {
 
         Card playCard();
 
+        virtual ~Player();
+
     };
 }
 #endif //UNTITLED_PLAYER_H
