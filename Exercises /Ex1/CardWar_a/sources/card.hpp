@@ -5,14 +5,24 @@
 #ifndef UNTITLED_CARD_H
 #define UNTITLED_CARD_H
 
-namespace ariel{
+#include <iostream>
 
-  class Card {
+using namespace std;
+
+namespace ariel {
+
+    class Card {
     private:
         int value;
         string suit;
     public:
-        Card(int value, string suit);
+
+        Card(int value, string suit) {
+            this->value = value;
+            this->suit = suit;
+        }
+
+
 
         int getValue();
 

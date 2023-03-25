@@ -4,27 +4,61 @@
 
 #ifndef UNTITLED_PLAYER_H
 #define UNTITLED_PLAYER_H
+
+#include <iostream>
+#include <stack>
 #include "card.hpp"
+
+using namespace std;
+
 namespace ariel {
+
+
     class Player {
+    private:
+        int score;
+        int wins;
+        int loses;
+    public:
+        int getScore() const;
+
+        int getWins() const;
+
+        int getLoses() const;
 
 
     public:
-        Player(string name);
+         string name;
 
-        int cardesTaken();
-        int stacksize ();
-        string name;
+        stack <Card> cardsTaken;
+        stack <Card> deck;
+
+
+        Player(string name) {
+            this->name = "Player";
+            this->score = 0;
+        }
+
+        Player() {
+
+            this->name = "player";
+            this->score = 0;
+        }
+
+
+        int cardesTaken();// prints the amount of cards this player has won.
+
+        int stacksize();//prints the amount of cards left. should be 21 but can be less if a draw was played
 
         string getName();
 
-        int getCardsTaken();
+        Card drawCard(); //draws a card from the deck
 
-        int getStackSize();
 
         void addCard(Card card);
 
         Card playCard();
+
     };
 }
 #endif //UNTITLED_PLAYER_H

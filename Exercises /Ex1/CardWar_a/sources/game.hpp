@@ -4,20 +4,30 @@
 
 #ifndef UNTITLED_GAME_H
 #define UNTITLED_GAME_H
+
 #include "player.hpp"
+#include "card.hpp"
+
+
 namespace ariel {
+
     class Game {
     private:
-        Player p1;
-        Player p2;
+        Player player1;
+        Player player2;
         int turns;
         int draws;
         int p1Wins;
         int p2Wins;
-        string lastTurn;
-        string log;
+
     public:
-        Game(Player p1, Player p2);
+
+
+        Game(Player &player1, Player &player2) {
+            this->player1 = player1;
+            this->player2 = player2;
+
+        }
 
         void playTurn();
 

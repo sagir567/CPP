@@ -15,7 +15,7 @@ OBJECTS=$(subst sources/,objects/,$(subst .cpp,.o,$(SOURCES)))
 run: demo
 	./$^
 
-demo: Demo.o $(OBJECTS)
+demo:
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 test: TestCounter.o Test.o $(OBJECTS)
