@@ -5,3 +5,8 @@
 
 
 #include "sources/player.hpp"
+#include "sources/card.hpp"
+
+card Player::playCard() {
+    return NULL;
+}

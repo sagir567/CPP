@@ -4,27 +4,33 @@
 
 #ifndef UNTITLED_GAME_H
 #define UNTITLED_GAME_H
+#include "player.hpp"
+namespace ariel {
+    class Game {
+    private:
+        Player p1;
+        Player p2;
+        int turns;
+        int draws;
+        int p1Wins;
+        int p2Wins;
+        string lastTurn;
+        string log;
+    public:
+        Game(Player p1, Player p2);
 
+        void playTurn();
 
-class Game {
-    Player player1;
-    Player player2;
+        void playAll();
 
-    Game(Player player1, Player player2);
+        void printLastTurn();
 
+        void printWiner();
 
-public:
+        void printLog();
 
-    void printStats();
-    void printLog();
-    void printWinner();
-    void printLastTurn();
-    void playTurn();
-    void playAll();
-
-
-
-};
-
+        void printStats();
+    };
+}
 
 #endif //UNTITLED_GAME_H

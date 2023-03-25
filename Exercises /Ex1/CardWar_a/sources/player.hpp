@@ -4,17 +4,27 @@
 
 #ifndef UNTITLED_PLAYER_H
 #define UNTITLED_PLAYER_H
+#include "card.hpp"
+namespace ariel {
+    class Player {
 
-
-class Player {
-    Player(char** name, int* score, int* num_of_cards);
 
     public:
-        char* name;
-        int score;
-        int num_of_cards;
+        Player(string name);
 
-};
+        int cardesTaken();
+        int stacksize ();
+        string name;
 
+        string getName();
 
+        int getCardsTaken();
+
+        int getStackSize();
+
+        void addCard(Card card);
+
+        Card playCard();
+    };
+}
 #endif //UNTITLED_PLAYER_H

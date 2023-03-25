@@ -5,10 +5,22 @@
 #ifndef UNTITLED_CARD_H
 #define UNTITLED_CARD_H
 
+namespace ariel{
 
-class card {
+  class Card {
+    private:
+        int value;
+        string suit;
+    public:
+        Card(int value, string suit);
 
-};
+        int getValue();
+
+        string getSuit();
+
+        string toString();
+    };
+}
 
 
 #endif //UNTITLED_CARD_H
