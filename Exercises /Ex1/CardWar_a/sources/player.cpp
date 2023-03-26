@@ -4,7 +4,7 @@
 
 
 
-#include "Player.hpp"
+#include "player.hpp"
 
 using namespace ariel;
 
@@ -20,34 +20,38 @@ void Player::addCard(Card c) {
 
 int Player::cardesTaken() {
     cout<<"Player "<<name<<" has won "<<cardsTaken.size()<<" cards"<<endl;
+    return (int)cardsTaken.size();
 }
 
 Card Player::drawCard() {
+    Card c;
     if(deck.empty()){
         cout<<"no cards left"<<endl;
+        c=deck.top();
+        deck.pop();
+        return c;
 
-    }
-    else{
-        Card c = deck.top();
+    }else{
+        c = deck.top();
         deck.pop();
         return c;
     }
-    int Player::getScore() const {
+    
+}
+    int Player::getScore()  {
     return score;
 }
 
-int Player::getWins() const {
+int Player::getWins()  {
     return wins;
 }
 
-int Player::getLoses() const {
+int Player::getLoses()  {
     return loses;
 }
-    Player::~Player() {
 
-}
 
-}
+
 
 
 

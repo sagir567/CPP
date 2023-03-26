@@ -25,6 +25,12 @@ namespace ariel {
         ~Card() {
 
         }
+        Card(void) {
+            this->value = 1;
+            this->suit = "heart";
+        }
+
+
 
 
         int getValue();

@@ -20,14 +20,14 @@ namespace ariel {
         int wins;
         int loses;
     public:
-        int getScore() const;
+        int getScore() ;
 
-        int getWins() const;
+        int getWins() ;
 
-        int getLoses() const;
+        int getLoses() ;
 
 
-    public:
+
          string name;
 
         stack <Card> cardsTaken;

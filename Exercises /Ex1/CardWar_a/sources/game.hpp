@@ -29,9 +29,7 @@ namespace ariel {
 
         }
 
-        ~Game() {
-
-        }
+        
 
         void playTurn();
 
@@ -45,7 +43,7 @@ namespace ariel {
 
         void printStats();
 
-        virtual ~Game();
+       
     };
 
 }
