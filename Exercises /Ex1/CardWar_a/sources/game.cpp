@@ -6,6 +6,31 @@
 
 using namespace ariel;
 
+void Game::playTurn(){
+Card c1 = player1.drawCard();
+Card c2 = player2.drawCard();
+
+
+}
+
+
+void Game::playAll(){
+//  will create later
+}
+
+void Game::printLastTurn(){
+//  will create later
+}
+
+void Game::printWiner(){
+//  will create later
+}
+
+void Game::printLog(){
+//  will create later
+}
+
+
 
 void Game::printStats() {
     cout <<"player1:\n"

@@ -13,12 +13,13 @@ using namespace std;
 
 namespace ariel {
 
-
+    static int count=0;
     class Player {
     private:
         int score;
         int wins;
         int loses;
+
     public:
         int getScore() ;
 
@@ -28,23 +29,28 @@ namespace ariel {
 
 
 
-         string name;
+        string name;
 
         stack <Card> cardsTaken;
         stack <Card> deck;
 
 
         Player(string name) {
-            this->name = "Player";
+            count +=1;
+            this->name = name;
             this->score = 0;
+            loses=wins=0;
+
         }
 
         Player() {
-
-            this->name = "player";
+            count+=1;
+            this->name = "player"+ to_string(count);
             this->score = 0;
+            loses=wins=0;
         }
 
+        double getRatio();
 
         int cardesTaken();// prints the amount of cards this player has won.
 
@@ -59,7 +65,7 @@ namespace ariel {
 
         Card playCard();
 
-        virtual ~Player();
+
 
     };
 }

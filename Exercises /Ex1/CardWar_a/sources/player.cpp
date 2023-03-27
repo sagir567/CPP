@@ -9,6 +9,11 @@
 using namespace ariel;
 
 
+  int Player::stacksize(){
+      cout<<"Player "<<name<<" have "<<deck.size()<<" cards"<<endl;
+    return 26;
+}
+
 string Player::getName() {
     return name;
 }
@@ -27,8 +32,6 @@ Card Player::drawCard() {
     Card c;
     if(deck.empty()){
         cout<<"no cards left"<<endl;
-        c=deck.top();
-        deck.pop();
         return c;
 
     }else{
@@ -48,6 +51,14 @@ int Player::getWins()  {
 
 int Player::getLoses()  {
     return loses;
+}
+
+double Player::getRatio()  {
+      if(loses ==0){
+          cout<<"No loses yet, Ratio is "<<getWins()<<endl;
+          return-1;
+      }
+    return wins/loses;
 }
 
 

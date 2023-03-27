@@ -21,14 +21,33 @@ namespace ariel {
             this->value = value;
             this->suit = suit;
         }
+        Card() {
+            srand(time(NULL));
+            int s = rand()%4;
+            this->value = (rand()%13)+1;
+
+            switch (s) {
+                case 0:{
+                    this->suit = "spades";
+                }
+                case 1:{
+                    this->suit = "diamonds";
+                }
+                case 2:{
+                    this->suit = "hearts";
+                }
+                case 3:{
+                    this->suit = "clubs";
+                }
+
+            }
+        }
 
         ~Card() {
 
         }
-        Card(void) {
-            this->value = 1;
-            this->suit = "heart";
-        }
+
+
 
 
 

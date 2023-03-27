@@ -26,10 +26,17 @@ namespace ariel {
         Game(Player &player1, Player &player2) {
             this->player1 = player1;
             this->player2 = player2;
+            for (int i=0;i<26;i++) {
+                player1.deck.push(Card());
+                player2.deck.push(Card());
+
+            }
 
         }
-
-        
+        Game(){
+            this->player1 =Player();
+            this->player2 = Player();
+        }
 
         void playTurn();
 
@@ -45,6 +52,7 @@ namespace ariel {
 
        
     };
+
 
 }
 
