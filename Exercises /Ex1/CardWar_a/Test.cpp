@@ -82,8 +82,8 @@ TEST_CASE("TEST 7 - Test Player's addCard and cardesTaken") {
     Card c1(5, "spades");
     Card c2(10, "hearts");
 
-    p1.addCard(&c1);
-    p1.addCard(&c2);
+    p1.addCard(&c1,p1.deck);
+    p1.addCard(&c2,p1.deck);
 
     CHECK(p1.cardesTaken() == 2);
 }
@@ -147,8 +147,8 @@ TEST_CASE("Test 14 - Player addCard increments cardsTaken") {
     Player p("test");
     Card* c1 = new Card(5, "spades");
     Card* c2 = new Card(10, "diamonds");
-    p.addCard(c1);
-    p.addCard(c2);
+    p.addCard(c1,p.deck);
+    p.addCard(c2,p.deck);
     CHECK(p.cardesTaken() == 2);
 }
 
@@ -158,8 +158,8 @@ TEST_CASE("Test 14 - Player addCard increments cardsTaken") {
 TEST_CASE("Test 15 - Player getRatio with loses") {
     cout << "TEST- " << i++ << "\n\n";
     Player p("test");
-    p.wins = 5;
-    p.loses = 3;
+    p.wins = 5.0;
+    p.loses = 3.0;
     CHECK(p.getRatio() == 5.0 / 3);
 }
 
@@ -222,15 +222,16 @@ TEST_CASE("Test 20 - Test Game playTurn with a winner") {
     Card c2(2, "spades");
     Card* _C1=&c1;
     Card* _C2=&c2;
-    p1.deck.push(_C1);
-    p2.deck.push(_C2);
+    p1.addCard(_C1,p1.deck);
+    p2.addCard(_C2,p2.deck);
 
     game.playTurn();
     //
     CHECK(p1.cardsTaken.size() == 2);
-    CHECK(p2.cardsTaken.size() == 2);
-    CHECK(p1.cardesTaken() == 0);
-    CHECK(p2.cardesTaken() == 2);
+    CHECK(p2.cardsTaken.size() ==0 );
+    CHECK(p1.cardesTaken() == 2);
+    CHECK(p2.cardesTaken() == 0);
+    cout<<"-------------------------\n";
     CHECK(p1.getWins() == 1);
     CHECK(p2.getLoses() == 1);
 }

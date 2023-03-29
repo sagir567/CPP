@@ -26,8 +26,8 @@ namespace ariel {
 
         int getLoses() ;
         int score;
-        int wins;
-        int loses;
+        double wins;
+        double loses;
 
 
 
@@ -63,7 +63,7 @@ namespace ariel {
         Card* drawCard(); //draws a card from the deck
 
 
-        void addCard(Card* card);
+        void addCard(Card* card,stack<Card*> s);
 
         Card playCard();
 

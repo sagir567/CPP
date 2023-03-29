@@ -18,8 +18,8 @@ string Player::getName() {
     return name;
 }
 
-void Player::addCard(Card* card) {
-    cardsTaken.push(card);
+void Player::addCard(Card* card, stack<Card*> s) {
+    s.push(card);
 }
 
 int Player::cardesTaken() {
@@ -55,7 +55,12 @@ double Player::getRatio()  {
           cout<<"No loses yet, Ratio is "<<getWins()<<endl;
           return-1;
       }
-    return wins/loses;
+      cout<< this->getWins();
+      cout<< this->getLoses();
+      double r = (this->getWins()/this->getLoses());
+      cout<< r;
+
+    return r;
 }
 
 

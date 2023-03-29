@@ -9,18 +9,28 @@ using namespace ariel;
 void Game::playTurn() {
     Card* c1 = player1.drawCard();
     Card* c2 = player2.drawCard();
-    if (c1 && c2) {
+
+    if (c1!= nullptr || c2!= nullptr) {
+        Card* c1 = player1.drawCard();
+        Card* c2 = player2.drawCard();
+
         if (c1->getValue() > c2->getValue()) {
-            player1.cardsTaken.push(c1);
-            player1.cardsTaken.push(c2);
+            cout<<"first condition";
+
+            player1.addCard(c1,player1.cardsTaken);
+            player1.addCard(c1,player1.cardsTaken);
             player1.wins+=1;
+            player2.loses+=1;
         } else {
-            player2.cardsTaken.push(c1);
-            player2.cardsTaken.push(c2);
+            player2.addCard(c1,player2.cardsTaken);
+            player2.addCard(c1,player2.cardsTaken);
             player2.wins+=1;
+            player1.loses+=1;
+            cout<<"second condition";
         }
     }
     else{
+        cout<<"ERROR  the cards are null\n";
 
     }
 }
