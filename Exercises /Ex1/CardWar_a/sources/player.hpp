@@ -16,9 +16,8 @@ namespace ariel {
     static int count=0;
     class Player {
     private:
-        int score;
-        int wins;
-        int loses;
+        // empty for the tests
+
 
     public:
         int getScore() ;
@@ -26,13 +25,16 @@ namespace ariel {
         int getWins() ;
 
         int getLoses() ;
+        int score;
+        int wins;
+        int loses;
 
 
 
         string name;
 
-        stack <Card> cardsTaken;
-        stack <Card> deck;
+        stack <Card*> cardsTaken;
+        stack <Card*> deck;
 
 
         Player(string name) {
@@ -58,10 +60,10 @@ namespace ariel {
 
         string getName();
 
-        Card drawCard(); //draws a card from the deck
+        Card* drawCard(); //draws a card from the deck
 
 
-        void addCard(Card card);
+        void addCard(Card* card);
 
         Card playCard();
 

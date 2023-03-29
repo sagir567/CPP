@@ -18,9 +18,8 @@ string Player::getName() {
     return name;
 }
 
-void Player::addCard(Card c) {
-    cardsTaken.push(c);
-
+void Player::addCard(Card* card) {
+    cardsTaken.push(card);
 }
 
 int Player::cardesTaken() {
@@ -28,19 +27,17 @@ int Player::cardesTaken() {
     return (int)cardsTaken.size();
 }
 
-Card Player::drawCard() {
-    Card c;
-    if(deck.empty()){
-        cout<<"no cards left"<<endl;
-        return c;
-
-    }else{
-        c = deck.top();
+Card* Player::drawCard() {
+    if(deck.empty()) {
+        cout << "no cards left" << endl;
+        return nullptr;
+    } else {
+        Card* c = deck.top();
         deck.pop();
         return c;
     }
-    
 }
+
     int Player::getScore()  {
     return score;
 }

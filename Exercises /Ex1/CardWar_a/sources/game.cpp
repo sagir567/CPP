@@ -6,12 +6,25 @@
 
 using namespace ariel;
 
-void Game::playTurn(){
-Card c1 = player1.drawCard();
-Card c2 = player2.drawCard();
+void Game::playTurn() {
+    Card* c1 = player1.drawCard();
+    Card* c2 = player2.drawCard();
+    if (c1 && c2) {
+        if (c1->getValue() > c2->getValue()) {
+            player1.cardsTaken.push(c1);
+            player1.cardsTaken.push(c2);
+            player1.wins+=1;
+        } else {
+            player2.cardsTaken.push(c1);
+            player2.cardsTaken.push(c2);
+            player2.wins+=1;
+        }
+    }
+    else{
 
-
+    }
 }
+
 
 
 void Game::playAll(){
@@ -45,5 +58,7 @@ void Game::printStats() {
                             "loses: " << player2.getLoses() << "\n";
 
 }
+
+
 
 
