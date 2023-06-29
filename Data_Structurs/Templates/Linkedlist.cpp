@@ -16,19 +16,37 @@ namespace templates {
     Linkedlist<T>::Linkedlist():head(nullptr), tail(nullptr), size(0) {}
 
     template<typename T>
-    Linkedlist<T>::Linkedlist(Node<T> head):head(head), tail(head), size(1) {}
+    Linkedlist<T>::Linkedlist(T data):head(Node<T>(data)), tail(Node<T>(data)), size(1) {}
 
     template<typename T>
-    void Linkedlist<T>::insertFirst(Node<T> node) {
+    void Linkedlist<T>::insertFirst(T data) {
         if(isEmpty()){
-            this->head=node;
-            this->tail= node;
+            this->head=Node<T> (data);
+            this->tail= Node<T> (data);
             size++;
         }
         else{
-            
+            Node<T> tempNode(data) ;
+            tempNode.setNext(head);
+            this->head.setPrev(tempNode);
+            this->head=tempNode;
+            size++;
         }
 
+    }
+    template<typename T>
+    void Linkedlist<T>::insertLast(T data) {
+        Node<T> tempNode(data);
+        if(isEmpty()){
+            this->head=tempNode;
+            this->tail=tempNode;
+            size++;
+        }
+        else{
+            this->tail.setNext(tempNode);
+            this->tail=tempNode;
+
+        }
     }
 
 

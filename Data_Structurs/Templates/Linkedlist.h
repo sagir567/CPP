@@ -12,7 +12,7 @@ namespace templates {
     template<typename T>
     class Linkedlist {
     private:
-        int size= 0;
+        int size;
 
     protected:
         Node<T> head;
@@ -21,17 +21,16 @@ namespace templates {
 
 
     public:
+        ~Linkedlist();
         Linkedlist();
-        explicit Linkedlist(Node<T>);
+        explicit Linkedlist(T data);
         bool isEmpty();
-        void insertFirst(Node<T>);
-        void insertBack(Node<T>);
+        void insertFirst(T data);
+        void insertLast(T data);
 
 
 
      };
-
-    template<typename T>
 
 
 } // templates
